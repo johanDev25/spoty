@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="album text-muted">
+      <div class="container">
+        <div class="row align-items-start">
+          <h1><%= @artist.name %></h1>
+          <h4 class="col-md-11">Albums (<%= @artist.albums.count %>)</h4>
+          <div class="col-md-9">
+            <div class="row">
+              <% @artist.albums.each do |album| %>
+              <div class="col-md-3 mr-5 py-2">
+                <div class="card" style="width: 15rem;">
+                  <img src="<%= album.image_url %>" class="card-img-top">
+                  <div class="card-body text-center">
+                    <h5 class="card-title"><%= album.name %></h5>
+                    <p class="card-text"><%= album.released_at %></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="text-center">
+              <img src="<%= @artist.image_url %>" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
